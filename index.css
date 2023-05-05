@@ -1,0 +1,197 @@
+body {
+  margin: 0;
+  font-family: monospace;
+}
+
+#poke-header {
+  display: flex;
+  justify-content: center;
+  background: #ac2424;
+  opacity: .8;
+  height: 7rem;
+  padding: 1rem;
+}
+
+#poke-header img {
+  height: 6rem;
+  width: auto;
+}
+
+#pokemon-collection {
+  position: relative;
+  left:57px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  text-align: center;
+  border: none;
+  padding: 1rem;
+  width: 23rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 0 2rem;
+  box-shadow: none;
+  background-image: url("https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.poke-avatar {
+  justify-self: center;
+  height: 12rem;
+  width: auto;
+}
+
+button {
+  position: relative;
+  background-color: #e04b52;
+  border: none;
+  border-radius: 5px;
+  height: 3rem;
+  width: max-content;
+  color: whitesmoke;
+  font-size: 18px;
+  justify-self: center;
+}
+
+button:hover {
+  background-color: white;
+  border: #ac2424 solid 1px;
+  color: #ac2424;
+}
+
+.container {
+  padding: 1rem;
+  width: stretch;
+  height: auto;
+  display: none;
+  background: #000;
+  opacity: .8;
+}
+
+.poke-search-form {
+  width: 80%
+}
+
+.submit {
+  position: relative;
+  background-color: #e04b52;
+  border-radius: 5px;
+  height: 2rem;
+  width: max-content;
+  color: whitesmoke;
+  font-size: 18px;
+  justify-self: center;
+  font-family: monospace;
+  margin: 3px;
+}
+
+.submit:hover {
+  background-color: whitesmoke;
+  border: #e04b52 solid 1px;
+  color: #e04b52;
+}
+
+
+.input-text {
+  border-radius: 5px;
+  height: 2rem;
+  width: 60%;
+  font-size: 18px;
+  font-family: monospace;
+  margin: 3px;
+}
+
+.poke-entry {
+  font-style:italic;
+  position:relative;
+  top:-7rem;
+}
+
+.poke-types {
+  position:relative;
+  left:20px;
+  width:23rem;
+  margin: 0 auto;
+  background-image: url("https://assets.stickpng.com/images/594191895eb5d45f10e35b25.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.grass, .GRASS {
+  color:#78C850;
+  font-weight:bold;
+}
+
+.poison, .POISON {
+  color:#A040A0;
+  font-weight:bold;
+}
+
+.fire, .FIRE {
+  color:#F08030;
+  font-weight:bold;
+}
+
+.water, .WATER {
+  color:#6890F0;
+  font-weight:bold;
+}
+
+.electric, .Electric {
+  color:#F8D030;
+  font-weight:bold;
+}
+
+.ice, .ICE {
+  color:#98D8D8;
+  font-weight:bold;
+}
+
+.fighting, .FIGHTING {
+  color:#C03028;
+  font-weight:bold;
+}
+
+.ground, .GROUND {
+  color:#E0C068;
+  font-weight:bold;
+}
+
+.flying, .FLYING {
+  color:#A890F0;
+  font-weight:bold;
+}
+
+.psychic, .PSYCHIC {
+  color:#F85888;
+  font-weight:bold;
+}
+
+.bug, .BUG {
+  color:#A8B820;
+  font-weight:bold;
+}
+
+.ghost, .GHOST {
+  color:#705898;
+  font-weight:bold;
+}
+
+.rock, .ROCK {
+  color:#B8A038;
+  font-weight:bold;
+}
+
+.dragon, .DRAGON {
+  color:#7038F8;
+  font-weight:bold;
+}
+
+.normal, .NORMAL {
+  color:white;
+  font-weight:bold;
+}
