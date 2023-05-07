@@ -19,12 +19,44 @@ body {
 
 #pokemon-collection {
   position: relative;
-  left:95px;
+  left:57px;
   width: 100%;
   margin: 0 auto;
 }
 
+#show-all-btn {
+  display:none;
+}
+
 .card {
+  text-align: center;
+  border: none;
+  padding: 1rem;
+  width: 23rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 0 2rem;
+  box-shadow: none;
+  background-image: url("https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.card1 {
+  text-align: center;
+  border: none;
+  padding: 1rem;
+  width: 23rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 0 2rem;
+  box-shadow: none;
+  background-image: url("https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.card2 {
   text-align: center;
   border: none;
   padding: 1rem;
@@ -54,6 +86,7 @@ button {
   color: whitesmoke;
   font-size: 18px;
   justify-self: center;
+  margin: auto 1rem
 }
 
 button:hover {
