@@ -18,6 +18,7 @@ body {
 }
 
 #pokemon-collection {
+  text-align: center;
   position: relative;
   left:57px;
   width: 100%;
@@ -28,35 +29,35 @@ body {
   display:none;
 }
 
+#poke1-cont {
+  text-align: center;
+  border: none;
+  padding: 1rem;
+  width: 23rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 0 2rem;
+  box-shadow: none;
+  background-image: url("https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#poke2-cont {
+  text-align: center;
+  border: none;
+  padding: 1rem;
+  width: 23rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 0 2rem;
+  box-shadow: none;
+  background-image: url("https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png");
+  background-position: center;
+  background-size: cover;
+}
+
 .card {
-  text-align: center;
-  border: none;
-  padding: 1rem;
-  width: 23rem;
-  height: 25rem;
-  display: inline-grid;
-  margin: 0 2rem;
-  box-shadow: none;
-  background-image: url("https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.card1 {
-  text-align: center;
-  border: none;
-  padding: 1rem;
-  width: 23rem;
-  height: 25rem;
-  display: inline-grid;
-  margin: 0 2rem;
-  box-shadow: none;
-  background-image: url("https://www.pngall.com/wp-content/uploads/4/Pokemon-Pokeball-Transparent.png");
-  background-position: center;
-  background-size: cover;
-}
-
-.card2 {
   text-align: center;
   border: none;
   padding: 1rem;
@@ -138,6 +139,12 @@ button:hover {
 }
 
 .poke-entry {
+  font-style:italic;
+  position:relative;
+  top:-7rem;
+}
+
+.poke-entry-vs {
   font-style:italic;
   position:relative;
   top:-7rem;
