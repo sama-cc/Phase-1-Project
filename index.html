@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8" />
-  <title>Pokemon Comparer</title>
-  <link rel="stylesheet" href="index.css" />
-</head>
-
-<body>
-  <div id="poke-header">
-    <p style="font-size:3rem"><span style="font-weight:bold;color:black">Poke</span><span
-        style="font-weight:bold;font-style:italic;color:white">Comparer</span></p>
-    <br />
-    <img src="https://www.pngmart.com/files/2/Pokeball-Transparent-PNG.png" alt="poke-header" />
-  </div>
-
-  <div class="container">
-    <form class="poke-search-form">
-      <h3 style="color:white">Choose two Pokemon to Compare!</h3>
-
-      <input type="text" name="name" value="" placeholder="Input Pokemon 1" class="input-text" />
+  <head>
+    <meta charset="utf-8" />
+    <title>Pokemon Comparer</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="poke-header">
+      <p style="font-size:3rem"><span style="font-weight:bold;color:black">Poke</span><span style="font-weight:bold;font-style:italic;color:white">Comparer</span></p>
       <br />
-      <input type="text" name="name" value="" placeholder="Input Pokemon 2" class="input-text" />
-      <br />
-      <input type="submit" name="submit" value="Compare Pokemon" class="submit" />
-    </form>
-  </div>
-  <p style="text-align:center">
-    <button id="poke-search-btn">Choose Pokemon to Compare</button>
-  </p>
+      <img
+        src="https://www.pngmart.com/files/2/Pokeball-Transparent-PNG.png"
+        alt="poke-header"
+      />
+    </div>
 
-  <div id="pokemon-collection"></div>
-  <script type="text/javascript" src="src/index.js"></script>
-</body>
+    <div class="container">
+      <form class="poke-search-form" >
+        <h3 style="color:white">Choose two Pokemon to Compare!</h3>
 
+        <input
+          type="text"
+          name="name"
+          value=""
+          placeholder="Input Pokemon 1"
+          class="input-text"
+        />
+        <br />
+        <input
+          type="text"
+          name="name"
+          value=""
+          placeholder="Input Pokemon 2"
+          class="input-text"
+        />
+        <br />
+        <input
+          type="submit"
+          name="submit"
+          value="Compare Pokemon"
+          class="submit"
+        />
+      </form>
+    </div>
+    <p style="text-align:center">
+      <button id="poke-search-btn">Choose Pokemon to Compare</button>
+    </p>
+
+    <div id="pokemon-collection"></div>
+    <script type="text/javascript" src="src/index.js"></script>
+  </body>
 </html>
