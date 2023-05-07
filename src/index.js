@@ -18,24 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const sendAlert = () => console.log("There was an error. Please try again.")
 
-// handles "like" fetch operation
-
-/* const handleLike = (e) => {
-  fetch(`http://localhost:3000/toys/${e.target.id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json",
-    },
-    body: JSON.stringify({
-      likes: parseInt(e.target.previousSibling.innerText) + 1
-    })
-  })
-  .then(resp => resp.json())
-  .then(data => e.target.previousSibling.innerText = `${data.likes} Likes`)
-  .catch(sendAlert);
-} */
-
 // handles card generation
 
 const createCard = (pokemon) => {
@@ -82,7 +64,3 @@ async function fetchCardData() {
 
 fetchCardData()
 
-/* fetch(`https://pokeapi.co/api/v2/pokemon/4/`)
-  .then(resp => resp.json())
-  .then(data => data.types[1].type.name)
-  .catch(sendAlert) */
