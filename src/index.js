@@ -20,6 +20,141 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function compareNormal(type) {
+  switch (type) {
+    case normal, fighting, flying, poison, ground, bug, fire, water, grass, electric, psychic, ice, dragon: return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareFighting(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareFlying(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function comparePoison(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareGround(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareRock(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareBug(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareGhost(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareFire(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareWater(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareGrass(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareElectric(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function comparePsychic(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareIce(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
+function compareDragon(type) {
+  switch (type) {
+    case : return "are Effective";
+    case : return "are Super Effective";
+    case : return "are Not Very Effective";
+    case : return "has No Effect";
+  }
+}
+
 const pokemonList = {
       Bulbasaur:1,
       Ivysaur:2,
