@@ -22,25 +22,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function compareNormal(type) {
   switch (type) {
-    case normal, fighting, flying, poison, ground, bug, fire, water, grass, electric, psychic, ice, dragon: return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    default : return "are Effective";
+    case "rock" : return "are Not Very Effective";
+    case "ghost" : return "has No Effect";
   }
 }
 
 function compareFighting(type) {
   switch (type) {
-    case : return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    default: return "are Effective";
+    case "normal", "rock", "ice": return "are Super Effective";
+    case "flying", "poison", "bug", "psychic": return "are Not Very Effective";
+    case "ghost": return "has No Effect";
   }
 }
 
 function compareFlying(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -49,7 +48,7 @@ function compareFlying(type) {
 
 function comparePoison(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -58,7 +57,7 @@ function comparePoison(type) {
 
 function compareGround(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -67,7 +66,7 @@ function compareGround(type) {
 
 function compareRock(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -76,7 +75,7 @@ function compareRock(type) {
 
 function compareBug(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -85,7 +84,7 @@ function compareBug(type) {
 
 function compareGhost(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -94,7 +93,7 @@ function compareGhost(type) {
 
 function compareFire(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -103,7 +102,7 @@ function compareFire(type) {
 
 function compareWater(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -112,7 +111,7 @@ function compareWater(type) {
 
 function compareGrass(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -121,7 +120,7 @@ function compareGrass(type) {
 
 function compareElectric(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -130,7 +129,7 @@ function compareElectric(type) {
 
 function comparePsychic(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -139,7 +138,7 @@ function comparePsychic(type) {
 
 function compareIce(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
@@ -148,7 +147,7 @@ function compareIce(type) {
 
 function compareDragon(type) {
   switch (type) {
-    case : return "are Effective";
+    default : return "are Effective";
     case : return "are Super Effective";
     case : return "are Not Very Effective";
     case : return "has No Effect";
