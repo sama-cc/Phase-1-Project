@@ -40,27 +40,25 @@ function compareFighting(type) {
 function compareFlying(type) {
   switch (type) {
     default : return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    case "grass", "fighting", "bug": return "are Super Effective";
+    case "electric", "rock": return "are Not Very Effective";
   }
 }
 
 function comparePoison(type) {
   switch (type) {
     default : return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    case "grass", "bug": return "are Super Effective";
+    case "poison", "ground", "rock", "ghost": return "are Not Very Effective";
   }
 }
 
 function compareGround(type) {
   switch (type) {
     default : return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    case "fire", "electric", "poison", "rock": return "are Super Effective";
+    case "grass", "bug": return "are Not Very Effective";
+    case "flying": return "has No Effect";
   }
 }
 
