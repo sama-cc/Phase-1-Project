@@ -121,9 +121,8 @@ function compareElectric(type) {
 function comparePsychic(type) {
   switch (type) {
     default : return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    case "fighting", "poison": return "are Super Effective";
+    case "psychic": return "are Not Very Effective";
   }
 }
 
