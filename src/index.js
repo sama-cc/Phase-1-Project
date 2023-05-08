@@ -129,9 +129,8 @@ function comparePsychic(type) {
 function compareIce(type) {
   switch (type) {
     default : return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    case "grass", "flying", "dragon": return "are Super Effective";
+    case "water", "ice": return "are Not Very Effective";
   }
 }
 
