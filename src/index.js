@@ -310,7 +310,7 @@ const createCard = (pokemon) => {
   const handleType2 = () => pokemon.types.length === 2 ? pokemon.types[1].type.name : "NONE";
   const handleFairy = (type) => type === "fairy" ? "normal" : type;
   const handleDoubleType = (type) => type === handleFairy(pokemon.types[0].type.name) ? "NONE" : type;  
-  card.innerHTML = `<h1 style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p style="position:relative;top:-3px;left:-20px; font-size:1rem"><span class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span><br /><span class="${handleDoubleType(handleFairy(handleType2()))}" id="type2">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></p></div>`;
+  card.innerHTML = `<h1 style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p style="position:relative;top:-3px;left:-20px; font-size:1rem"><span class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span><br /><span class="${handleDoubleType(handleFairy(handleType2()))}">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></p></div>`;
   document.getElementById("pokemon-collection").appendChild(card);
 }
 
@@ -319,7 +319,7 @@ const createCard1 = (pokemon) => {
   const handleType2 = () => pokemon.types.length === 2 ? pokemon.types[1].type.name : "NONE";
   const handleFairy = (type) => type === "fairy" ? "normal" : type;
   const handleDoubleType = (type) => type === handleFairy(pokemon.types[0].type.name) ? "NONE" : type;  
-  card.innerHTML = `<h1 style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry-vs">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p style="position:relative;top:-3px;left:-20px; font-size:1rem"><span class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span><br /><span class="${handleDoubleType(handleFairy(handleType2()))}" id="type2">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></p></div>`;
+  card.innerHTML = `<h1 id="poke-name1" style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry-vs">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p id="poke1-type1" style="position:relative;top:-3px;left:-20px; font-size:1rem"><span id="poke1-type1-span" class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span></p><br /><p id="poke1-type2"><span id="poke1-type2-span" class="${handleDoubleType(handleFairy(handleType2()))}">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></p></div>`;
 }
 
 const createCard2 = (pokemon) => {
@@ -327,7 +327,7 @@ const createCard2 = (pokemon) => {
   const handleType2 = () => pokemon.types.length === 2 ? pokemon.types[1].type.name : "NONE";
   const handleFairy = (type) => type === "fairy" ? "normal" : type;
   const handleDoubleType = (type) => type === handleFairy(pokemon.types[0].type.name) ? "NONE" : type;  
-  card.innerHTML = `<h1 style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry-vs">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p style="position:relative;top:-3px;left:-20px; font-size:1rem"><span class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span><br /><span class="${handleDoubleType(handleFairy(handleType2()))}" id="type2">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></p></div>`;
+  card.innerHTML = `<h1 id="poke-name2" style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry-vs">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p id="poke2-type1" style="position:relative;top:-3px;left:-20px; font-size:1rem"><span id="poke2-type1-span" class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span></p><br /><p id="poke2-type2"><span id="poke2-type2-span" class="${handleDoubleType(handleFairy(handleType2()))}">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></p></div>`;
 }
 
 // creates comparison based on submitted form data
@@ -335,11 +335,41 @@ const createCard2 = (pokemon) => {
 document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   e.preventDefault();  
   const pokeCollection = document.getElementById("pokemon-collection");
+  const pokeName1 = document.getElementById("poke-name1").innerText;
+  const pokeName2 = document.getElementById("poke-name2").innerText;
+  const pokeType1HTML = document.getElementById("poke1-type1").innerHTML;
+  //const pokeType2HTML = document.getElementById("poke1-type2").innerHTML;
+  const pokeType1 = document.getElementById("poke1-type1-span").innerText.substring(8).toLowerCase();
+  //const pokeType2 = document.getElementById("poke1-type2-span").innerText.substring(8).toLowerCase();
+  const oppType1HTML = document.getElementById("poke2-type1").innerHTML;
+  //const oppType2HTML = document.getElementById("poke2-type2").innerHTML;
+  const oppType1 = document.getElementById("poke2-type1-span").innerText.substring(8).toLowerCase();
+  //const oppType2 = document.getElementById("poke2-type2-span").innerText.substring(8).toLowerCase();
+
+  function selectCompFunc(type) {
+    switch (type) {
+      case "normal": return compareNormal();
+      case "fire": return compareFire();
+      case "water": return compareWater();
+      case "electric": return compareElectric();
+      case "grass": return compareGrass();
+      case "ice": return compareIce();
+      case "fighting": return compareFighting();
+      case "poison": return comparePoison();
+      case "ground": return compareGround();
+      case "flying": return compareFlying();
+      case "psychic": return comparePsychic();
+      case "bug": return compareBug();
+      case "rock": return compareRock();
+      case "ghost": return compareGhost();
+      case "dragon": return compareDragon();
+    }
+  }
   pokeCollection.innerHTML=`
   <table id="compt-table" style="position:relative;width:100%;margin:0 auto">
     <tbody>
       <tr>
-        <td></td>
+        <td id="comp-data">${pokeName1}'s ${pokeType1HTML} moves ${selectCompFunc(pokeType1)(oppType1)} against ${pokeName2}'s ${oppType1HTML} type.</td>
       </tr>
       <tr>
         <td id="poke1-cont"></td>
