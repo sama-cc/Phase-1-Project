@@ -223,40 +223,41 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     </tr>
   </table>
   `
-  function findStringValue(string) {
+  function findStringValue1(string) {
     const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
     const stringValue = pokeKeysLow.indexOf(string) + 1;
-    if (stringValue === undefined) {
-      return alert("The Pokemon you have entered cannot be found. Please check spelling.");
+    if (stringValue == false) {
+      return document.getElementById("alert-text-1").style.display = "inline";
     } else {
       return stringValue;
     }
-  }
+  }  
+
+  function findStringValue2(string) {
+    const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
+    const stringValue = pokeKeysLow.indexOf(string) + 1;
+    if (stringValue == false) {
+      return document.getElementById("alert-text-2").style.display = "inline";
+    } else {
+      return stringValue;
+    }
+  }  
+  
+  const poke1 = queryValue1();
+  const poke2 = queryValue2();
   
   function queryValue1() {
-    const value = document.getElementById("poke-box1").value
-    if (typeof value === "string"){
-      //return findStringValue(value.toLowerCase());
-      return console.log(value.toLowerCase())
-    } else {
-      return value;
-    }
-  }
+    const value = document.getElementById("poke-box1").value;
+    return value == parseInt(value) ? parseInt(value) : findStringValue1(value.toLowerCase())
+  }  
 
-    function queryValue2() {
-    const value = document.getElementById("poke-box2").value
-    if (typeof value === "string"){
-      //return findStringValue(value.toLowerCase());
-      return console.log(value.toLowerCase())
-    } else {
-      return value;
-    }
+  function queryValue2() {
+    const value = document.getElementById("poke-box2").value;
+    return value == parseInt(value) ? parseInt(value) : findStringValue2(value.toLowerCase())
   }
-  
-  const poke1 = parseInt(queryValue1());
-  const poke2 = parseInt(queryValue2());
   
   function poke1True() {
+    
     fetch(`https://pokeapi.co/api/v2/pokemon/${poke1}/`)
     .then(resp => resp.json())
     .then(data => createCard1(data))
