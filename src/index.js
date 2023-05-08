@@ -385,14 +385,25 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   e.preventDefault();  
   const pokeCollection = document.getElementById("pokemon-collection");
   pokeCollection.innerHTML=`
-  <table id="compt-table" style="position:relative;width:100%;margin:0 auto">
-    <tbody>
+  <table style="position:relative;width:100%;margin:0 auto">
+    <tbody style="text-align:center">
       <tr>
         <td id="comp-data"></td>
+      </tr>
+      <tr>
         <td id="comp-data2"></td>
+      </tr>
+      <tr>
         <td id="comp-data3"></td>
+       </tr>
+       <tr> 
         <td id="comp-data4"></td>
       </tr>
+    </tbody>
+  </table>
+
+  <table id="compt-table" style="position:relative;width:100%;margin:0 auto">
+    <tbody style="text-align:center">
       <tr>
         <td id="poke1-cont"></td>
         <td style="text-align:center"><p style="font-family:bradley hand;font-size:5rem;font-weight:bold;font-style:italic">VS</p></td>
@@ -547,11 +558,11 @@ Promise.all([poke1Promise, poke2Promise])
     
       document.getElementById("comp-data").innerHTML = `${pokeName1}'s ${pokeType1} moves ${selectCompFunc1(pokeType1)} against ${pokeName2}'s ${oppType1} type.`
 
-      oppType2 !== "NONE" ? document.getElementById("comp-data2").innerHTML = `${pokeName1}'s ${pokeType1} moves ${selectCompFunc2(pokeType1)} against ${pokeName2}'s ${oppType2} type.` : document.getElementById("comp-data2").style.display ="none";
+      oppType2 !== "none" ? document.getElementById("comp-data2").innerHTML = `${pokeName1}'s ${pokeType1} moves ${selectCompFunc2(pokeType1)} against ${pokeName2}'s ${oppType2} type.`: document.getElementById("comp-data2").style.display ="none";
 
-      pokeType2 !== "NONE" ? document.getElementById("comp-data3").innerHTML = `${pokeName1}'s ${pokeType2} moves ${selectCompFunc3(pokeType2)} against ${pokeName2}'s ${oppType1} type.` : document.getElementById("comp-data2").style.display ="none";
+      pokeType2 !== "none" ? document.getElementById("comp-data3").innerHTML = `${pokeName1}'s ${pokeType2} moves ${selectCompFunc3(pokeType2)} against ${pokeName2}'s ${oppType1} type.` : document.getElementById("comp-data3").style.display ="none";
 
-      oppType2 !== "NONE" ? document.getElementById("comp-data4").innerHTML = `${pokeName1}'s ${pokeType2} moves ${selectCompFunc4(pokeType2)} against ${pokeName2}'s ${oppType2} type.` : document.getElementById("comp-data2").style.display ="none";
+      (oppType2 !== "none"  && pokeType2 !== "none") ? document.getElementById("comp-data4").innerHTML = `${pokeName1}'s ${pokeType2} moves ${selectCompFunc4(pokeType2)} against ${pokeName2}'s ${oppType2} type.` : document.getElementById("comp-data4").style.display ="none";
       
 
     }, 50)
