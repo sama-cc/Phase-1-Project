@@ -96,9 +96,8 @@ function compareFire(type) {
 function compareWater(type) {
   switch (type) {
     default : return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    case "fire", "ground", "rock": return "are Super Effective";
+    case "water", "grass", "dragon": return "are Not Very Effective";
   }
 }
 
