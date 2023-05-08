@@ -20,7 +20,7 @@ body {
 #pokemon-collection {
   text-align: center;
   position: relative;
-  left:57px;
+  left:auto;
   width: 100%;
   margin: 0 auto;
 }
@@ -106,7 +106,8 @@ button:hover {
 }
 
 .poke-search-form {
-  width: 80%
+  text-align:center;
+  width: 100%
 }
 
 .submit {
@@ -132,7 +133,7 @@ button:hover {
 .input-text {
   border-radius: 5px;
   height: 2rem;
-  width: 60%;
+  width: 32%;
   font-size: 18px;
   font-family: monospace;
   margin: 3px;
