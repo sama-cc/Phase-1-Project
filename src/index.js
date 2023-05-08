@@ -227,7 +227,7 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
     const stringValue = pokeKeysLow.indexOf(string) + 1;
     if (stringValue == false) {
-      return document.getElementById("alert-text-1").style.display = "inline";
+      return false;
     } else {
       return stringValue;
     }
@@ -237,7 +237,7 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
     const stringValue = pokeKeysLow.indexOf(string) + 1;
     if (stringValue == false) {
-      return document.getElementById("alert-text-2").style.display = "inline";
+      return false;
     } else {
       return stringValue;
     }
@@ -273,11 +273,9 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     document.getElementById("alert-text-2").style.display = "none";
   }
 
-  !Number.isNaN(poke1) ? poke1True() :
-    document.getElementById("alert-text-1").style.display = "inline";
+  poke1 === false ? document.getElementById("alert-text-1").style.display = "inline" : poke1True();
   
-  !Number.isNaN(poke2) ? poke2True() :
-    document.getElementById("alert-text-2").style.display = "inline";
+  poke2 === false ? document.getElementById("alert-text-2").style.display = "inline" : poke1True();
 
   document.querySelector("#show-all-btn").style.display = "inline";
 })
