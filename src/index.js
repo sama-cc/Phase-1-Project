@@ -137,62 +137,60 @@ function compareIce(type) {
 function compareDragon(type) {
   switch (type) {
     default : return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    case "dragon": return "are Super Effective";
   }
 }
 
 const pokemonList = {
-      Bulbasaur:1,
-      Ivysaur:2,
-      Venusaur:3,
-      Charmander:4,
-      Charmeleon:5,
-      Charizard:6,
-      Squirtle:7,
-      Wartortle:8,
-      Blastoise:9,
-      Caterpie:10,
-      Metapod:11,
-      Butterfree:12,
-      Weedle:13,
-      Kakuna:14,
-      Beedrill:14,
-      Pidgey:15,
-      Pidgeotto:16,
-      Pidgeot:17,
-      Rattata:18,
-      Raticate:19,
-      Spearow:20,
-      Fearow:21,
-      Ekans:22,
-      Arbok:23,
-      Pikachu:24,
-      Raichu:25,
-      Sandshrew:26,
-      Sandslash:27,
-      "Nidoran-M":28,
-      Nidorina:29,
-      Nidoqueen:30,
-      "Nidoran-F":31,
-      Nidorino:32,
-      Nidoking:33,
-      Clefairy:34,
-      Clefable:35,
-      Vulpix:36,
-      Ninetales:37,
-      Jigglypuff:38,
-      Wigglytuff:39,
-      Zubat:40,
-      Golbat:41,
-      Oddish:42,
-      Gloom:43,
-      Vileplume:44,
-      Paras:45,
-      Parasect:46,
-      Venonat:47,
-      Venomoth:48,
+Bulbasaur:1,
+Ivysaur:2,
+Venusaur:3,
+Charmander:4,
+Charmeleon:5,
+Charizard:6,
+Squirtle:7,
+Wartortle:8,
+Blastoise:9,
+Caterpie:10,
+Metapod:11,
+Butterfree:12,
+Weedle:13,
+Kakuna:14,
+Beedrill:14,
+Pidgey:15,
+Pidgeotto:16,
+Pidgeot:17,
+Rattata:18,
+Raticate:19,
+Spearow:20,
+Fearow:21,
+Ekans:22,
+Arbok:23,
+Pikachu:24,
+Raichu:25,
+Sandshrew:26,
+Sandslash:27,
+"Nidoran-M":28,
+Nidorina:29,
+Nidoqueen:30,
+"Nidoran-F":31,
+Nidorino:32,
+Nidoking:33,
+Clefairy:34,
+Clefable:35,
+Vulpix:36,
+Ninetales:37,
+Jigglypuff:38,
+Wigglytuff:39,
+Zubat:40,
+Golbat:41,
+Oddish:42,
+Gloom:43,
+Vileplume:44,
+Paras:45,
+Parasect:46,
+Venonat:47,
+Venomoth:48,
 Diglett:49,
 Dugtrio:50,
 Meowth:51,
@@ -339,11 +337,16 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   const pokeCollection = document.getElementById("pokemon-collection");
   pokeCollection.innerHTML=`
   <table id="compt-table" style="position:relative;width:100%;margin:0 auto">
-    <tr>
-      <td id="poke1-cont"></td>
-      <td style="text-align:center"><p style="font-family:bradley hand;font-size:5rem;font-weight:bold;font-style:italic">VS</p></td>
-      <td id="poke2-cont"></td>
-    </tr>
+    <tbody>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td id="poke1-cont"></td>
+        <td style="text-align:center"><p style="font-family:bradley hand;font-size:5rem;font-weight:bold;font-style:italic">VS</p></td>
+        <td id="poke2-cont"></td>    
+      </tr>
+    </tbody>  
   </table>
   `
   function findStringValue1(string) {
@@ -402,16 +405,6 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
 
   document.querySelector("#show-all-btn").style.display = "inline";
 })
-
-// incomplete search code
-
-/*
-  const pokeCollection = document.getElementsByID("pokemon-collection");
-  const cards = pokeCollection.querySelectorAll(".card")
-  for (card of cards)
-*/
-
-// generates cards for all pre-existing pokemon in the JSON database
 
 async function fetchCardData() {
   for (poke=1; poke<152; poke++) {
