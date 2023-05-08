@@ -335,16 +335,6 @@ const createCard2 = (pokemon) => {
 document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   e.preventDefault();  
   const pokeCollection = document.getElementById("pokemon-collection");
-  const pokeName1 = document.getElementById("poke-name1").innerText;
-  const pokeName2 = document.getElementById("poke-name2").innerText;
-  const pokeType1HTML = document.getElementById("poke1-type1").innerHTML;
-  //const pokeType2HTML = document.getElementById("poke1-type2").innerHTML;
-  const pokeType1 = document.getElementById("poke1-type1-span").innerText.substring(8).toLowerCase();
-  //const pokeType2 = document.getElementById("poke1-type2-span").innerText.substring(8).toLowerCase();
-  const oppType1HTML = document.getElementById("poke2-type1").innerHTML;
-  //const oppType2HTML = document.getElementById("poke2-type2").innerHTML;
-  const oppType1 = document.getElementById("poke2-type1-span").innerText.substring(8).toLowerCase();
-  //const oppType2 = document.getElementById("poke2-type2-span").innerText.substring(8).toLowerCase();
 
   function selectCompFunc(type) {
     switch (type) {
@@ -369,7 +359,7 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   <table id="compt-table" style="position:relative;width:100%;margin:0 auto">
     <tbody>
       <tr>
-        <td id="comp-data">${pokeName1}'s ${pokeType1HTML} moves ${selectCompFunc(pokeType1)(oppType1)} against ${pokeName2}'s ${oppType1HTML} type.</td>
+        <td id="comp-data"></td>
       </tr>
       <tr>
         <td id="poke1-cont"></td>
@@ -429,9 +419,34 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     document.getElementById("alert-text-2").style.display = "none";
   }
 
-  poke1 === false ? document.getElementById("alert-text-1").style.display = "inline" : poke1True();
+  function makeCompCard1() {
+    return new Promise((resolve) => {
+      resolve(poke1 === false ? document.getElementById("alert-text-1").style.display = "inline" : poke1True());
+    }
+    )
+  }
+
+  function makeCompCard2() {
+    return new Promise((resolve) => {
+      resolve(poke2 === false ? document.getElementById("alert-text-2").style.display = "inline" : poke2True());
+    })
+  }
+
+Promise.all([makeCompCard1(),makeCompCard2()])
+  .then(() => {
+    const pokeName1 = document.getElementById("poke-name1").innerText;
+    const pokeName2 = document.getElementById("poke-name2").innerText;
+    const pokeType1HTML = document.getElementById("poke1-type1").innerHTML;
+    //const pokeType2HTML = document.getElementById("poke1-type2").innerHTML;
+    const pokeType1 = document.getElementById("poke1-type1-span").innerText.substring(8).toLowerCase();
+    //const pokeType2 = document.getElementById("poke1-type2-span").innerText.substring(8).toLowerCase();
+    const oppType1HTML = document.getElementById("poke2-type1").innerHTML;
+    //const oppType2HTML = document.getElementById("poke2-type2").innerHTML;
+    const oppType1 = document.getElementById("poke2-type1-span").innerText.substring(8).toLowerCase();
+    //const oppType2 = document.getElementById("poke2-type2-span").innerText.substring(8).toLowerCase();
   
-  poke2 === false ? document.getElementById("alert-text-2").style.display = "inline" : poke2True();
+    document.getElementById("comp-data").innerHTML = `${pokeName1}'s ${pokeType1HTML} moves ${selectCompFunc(pokeType1)(oppType1)} against ${pokeName2}'s ${oppType1HTML} type.`
+  })
 
   document.querySelector("#show-all-btn").style.display = "inline";
 })
