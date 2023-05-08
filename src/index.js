@@ -31,8 +31,13 @@ function compareNormal(type) {
 function compareFighting(type) {
   switch (type) {
     default: return "are Effective";
-    case "normal", "rock", "ice": return "are Super Effective";
-    case "flying", "poison", "bug", "psychic": return "are Not Very Effective";
+    case "normal":
+    case "rock": 
+    case "ice": return "are Super Effective";
+    case "flying": 
+    case "poison": 
+    case "bug": 
+    case "psychic": return "are Not Very Effective";
     case "ghost": return "has No Effect";
   }
 }
@@ -40,24 +45,35 @@ function compareFighting(type) {
 function compareFlying(type) {
   switch (type) {
     default : return "are Effective";
-    case "grass", "fighting", "bug": return "are Super Effective";
-    case "electric", "rock": return "are Not Very Effective";
+    case "grass": 
+    case "fighting": 
+    case "bug": return "are Super Effective";
+    case "electric": 
+    case "rock": return "are Not Very Effective";
   }
 }
 
 function comparePoison(type) {
   switch (type) {
     default : return "are Effective";
-    case "grass", "bug": return "are Super Effective";
-    case "poison", "ground", "rock", "ghost": return "are Not Very Effective";
+    case "grass":
+    case "bug": return "are Super Effective";
+    case "poison":
+    case "ground": 
+    case "rock": 
+    case "ghost": return "are Not Very Effective";
   }
 }
 
 function compareGround(type) {
   switch (type) {
     default : return "are Effective";
-    case "fire", "electric", "poison", "rock": return "are Super Effective";
-    case "grass", "bug": return "are Not Very Effective";
+    case "fire":
+    case "electric": 
+    case "poison": 
+    case "rock": return "are Super Effective";
+    case "grass":
+    case "bug": return "are Not Very Effective";
     case "flying": return "has No Effect";
   }
 }
@@ -65,16 +81,25 @@ function compareGround(type) {
 function compareRock(type) {
   switch (type) {
     default : return "are Effective";
-    case "fire", "ice", "flying", "bug": return "are Super Effective";
-    case "fighting", "ground": return "are Not Very Effective";
+    case "fire":
+    case "ice": 
+    case "flying": 
+    case "bug": return "are Super Effective";
+    case "fighting":
+    case "ground": return "are Not Very Effective";
   }
 }
 
 function compareBug(type) {
   switch (type) {
     default : return "are Effective";
-    case "grass", "poison", "psychic": return "are Super Effective";
-    case "fire", "fighting", "flying", "ghost": return "are Not Very Effective";
+    case "grass":
+    case "poison": 
+    case "psychic": return "are Super Effective";
+    case "fire":
+    case "fighting": 
+    case "flying": 
+    case "ghost": return "are Not Very Effective";
   }
 }
 
@@ -88,32 +113,52 @@ function compareGhost(type) {
 function compareFire(type) {
   switch (type) {
     default : return "are Effective";
-    case "grass", "ice", "bug": return "are Super Effective";
-    case "fire", "water", "rock", "dragon": return "are Not Very Effective";
+    case "grass":
+    case "ice": 
+    case "bug": return "are Super Effective";
+    case "fire":
+    case "water":
+    case "rock": 
+    case "dragon": return "are Not Very Effective";
   }
 }
 
 function compareWater(type) {
   switch (type) {
     default : return "are Effective";
-    case "fire", "ground", "rock": return "are Super Effective";
-    case "water", "grass", "dragon": return "are Not Very Effective";
+    case "fire":
+    case "ground": 
+    case "rock": return "are Super Effective";
+    case "water":
+    case "grass": 
+    case "dragon": return "are Not Very Effective";
   }
 }
 
 function compareGrass(type) {
-  switch (type) {
+  switch (type) {        
     default : return "are Effective";
-    case "water", "ground", "rock": return "are Super Effective";
-    case "fire", "grass", "poison", "flying", "bug", "dragon": return "are Not Very Effective";
+    case "water":
+    case "ground": 
+    case "rock": return "are Super Effective";
+    case "fire":
+    case "grass": 
+    case "poison": 
+    case "flying": 
+    case "bug": 
+    case "dragon": return "are Not Very Effective";
+
   }
 }
 
 function compareElectric(type) {
   switch (type) {
     default : return "are Effective";
-    case "water", "flying": return "are Super Effective";
-    case "electric", "grass", "dragon": return "are Not Very Effective";
+    case "water":
+    case "flying": return "are Super Effective";
+    case "electric":
+    case "grass": 
+    case "dragon": return "are Not Very Effective";
     case "ground": return "has No Effect";
   }
 }
@@ -121,7 +166,8 @@ function compareElectric(type) {
 function comparePsychic(type) {
   switch (type) {
     default : return "are Effective";
-    case "fighting", "poison": return "are Super Effective";
+    case "fighting":
+    case "poison": return "are Super Effective";
     case "psychic": return "are Not Very Effective";
   }
 }
@@ -129,8 +175,11 @@ function comparePsychic(type) {
 function compareIce(type) {
   switch (type) {
     default : return "are Effective";
-    case "grass", "flying", "dragon": return "are Super Effective";
-    case "water", "ice": return "are Not Very Effective";
+    case "grass":
+    case "flying": 
+    case "dragon": return "are Super Effective";
+    case "water":
+    case "ice": return "are Not Very Effective";
   }
 }
 
@@ -319,7 +368,7 @@ const createCard1 = (pokemon) => {
   const handleType2 = () => pokemon.types.length === 2 ? pokemon.types[1].type.name : "NONE";
   const handleFairy = (type) => type === "fairy" ? "normal" : type;
   const handleDoubleType = (type) => type === handleFairy(pokemon.types[0].type.name) ? "NONE" : type;  
-  card.innerHTML = `<h1 id="poke-name1" style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry-vs">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p id="poke1-type1" style="position:relative;top:-3px;left:-20px; font-size:1rem"><span id="poke1-type1-span" class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span></p><br /><p id="poke1-type2"><span id="poke1-type2-span" class="${handleDoubleType(handleFairy(handleType2()))}">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></p></div>`;
+  card.innerHTML = `<h1 id="poke-name1" style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry-vs">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p id="poke1-type1" style="position:relative;top:-3px;left:-20px; font-size:1rem"><span id="poke1-type1-span" class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span><br /><span id="poke1-type2"><span id="poke1-type2-span" class="${handleDoubleType(handleFairy(handleType2()))}">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></span></p></div>`;
 }
 
 const createCard2 = (pokemon) => {
@@ -327,7 +376,7 @@ const createCard2 = (pokemon) => {
   const handleType2 = () => pokemon.types.length === 2 ? pokemon.types[1].type.name : "NONE";
   const handleFairy = (type) => type === "fairy" ? "normal" : type;
   const handleDoubleType = (type) => type === handleFairy(pokemon.types[0].type.name) ? "NONE" : type;  
-  card.innerHTML = `<h1 id="poke-name2" style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry-vs">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p id="poke2-type1" style="position:relative;top:-3px;left:-20px; font-size:1rem"><span id="poke2-type1-span" class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span></p><br /><p id="poke2-type2"><span id="poke2-type2-span" class="${handleDoubleType(handleFairy(handleType2()))}">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></p></div>`;
+  card.innerHTML = `<h1 id="poke-name2" style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry-vs">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p id="poke2-type1" style="position:relative;top:-3px;left:-20px; font-size:1rem"><span id="poke2-type1-span" class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span><br /><span id="poke2-type2"><span id="poke2-type2-span" class="${handleDoubleType(handleFairy(handleType2()))}">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></span></p></div>`;
 }
 
 // creates comparison based on submitted form data
@@ -335,26 +384,6 @@ const createCard2 = (pokemon) => {
 document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   e.preventDefault();  
   const pokeCollection = document.getElementById("pokemon-collection");
-
-  function selectCompFunc(type) {
-    switch (type) {
-      case "normal": return compareNormal();
-      case "fire": return compareFire();
-      case "water": return compareWater();
-      case "electric": return compareElectric();
-      case "grass": return compareGrass();
-      case "ice": return compareIce();
-      case "fighting": return compareFighting();
-      case "poison": return comparePoison();
-      case "ground": return compareGround();
-      case "flying": return compareFlying();
-      case "psychic": return comparePsychic();
-      case "bug": return compareBug();
-      case "rock": return compareRock();
-      case "ghost": return compareGhost();
-      case "dragon": return compareDragon();
-    }
-  }
   pokeCollection.innerHTML=`
   <table id="compt-table" style="position:relative;width:100%;margin:0 auto">
     <tbody>
@@ -419,33 +448,45 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     document.getElementById("alert-text-2").style.display = "none";
   }
 
-  function makeCompCard1() {
-    return new Promise((resolve) => {
-      resolve(poke1 === false ? document.getElementById("alert-text-1").style.display = "inline" : poke1True());
-    }
-    )
-  }
+const poke1Promise = Promise.resolve(poke1 === false ? document.getElementById("alert-text-1").style.display = "inline" : poke1True())
 
-  function makeCompCard2() {
-    return new Promise((resolve) => {
-      resolve(poke2 === false ? document.getElementById("alert-text-2").style.display = "inline" : poke2True());
-    })
-  }
+const poke2Promise = Promise.resolve(poke2 === false ? document.getElementById("alert-text-2").style.display = "inline" : poke2True())
 
-Promise.all([makeCompCard1(),makeCompCard2()])
+Promise.all([poke1Promise, poke2Promise])
   .then(() => {
-    const pokeName1 = document.getElementById("poke-name1").innerText;
-    const pokeName2 = document.getElementById("poke-name2").innerText;
-    const pokeType1HTML = document.getElementById("poke1-type1").innerHTML;
-    //const pokeType2HTML = document.getElementById("poke1-type2").innerHTML;
-    const pokeType1 = document.getElementById("poke1-type1-span").innerText.substring(8).toLowerCase();
-    //const pokeType2 = document.getElementById("poke1-type2-span").innerText.substring(8).toLowerCase();
-    const oppType1HTML = document.getElementById("poke2-type1").innerHTML;
-    //const oppType2HTML = document.getElementById("poke2-type2").innerHTML;
-    const oppType1 = document.getElementById("poke2-type1-span").innerText.substring(8).toLowerCase();
-    //const oppType2 = document.getElementById("poke2-type2-span").innerText.substring(8).toLowerCase();
-  
-    document.getElementById("comp-data").innerHTML = `${pokeName1}'s ${pokeType1HTML} moves ${selectCompFunc(pokeType1)(oppType1)} against ${pokeName2}'s ${oppType1HTML} type.`
+    setTimeout(() => {
+      const pokeName1 = document.getElementById("poke-name1").innerText;
+      const pokeName2 = document.getElementById("poke-name2").innerText;
+      //const pokeType2HTML = document.getElementById("poke1-type2").innerHTML;
+      const pokeType1 = document.getElementById("poke1-type1-span").innerText.substring(8).toLowerCase();
+      //const pokeType2 = document.getElementById("poke1-type2-span").innerText.substring(8).toLowerCase();
+      //const oppType2HTML = document.getElementById("poke2-type2").innerHTML;
+      const oppType1 = document.getElementById("poke2-type1-span").innerText.substring(8).toLowerCase();
+      //const oppType2 = document.getElementById("poke2-type2-span").innerText.substring(8).toLowerCase();
+
+      function selectCompFunc1(type) {
+        switch (type) {
+          case "normal": return compareNormal(oppType1);
+          case "fire": return compareFire(oppType1);
+          case "water": return compareWater(oppType1);
+          case "electric": return compareElectric(oppType1);
+          case "grass": return console.log(compareGrass(oppType1));
+          case "ice": return compareIce(oppType1);
+          case "fighting": return compareFighting(oppType1);
+          case "poison": return comparePoison(oppType1);
+          case "ground": return compareGround(oppType1);
+          case "flying": return compareFlying(oppType1);
+          case "psychic": return comparePsychic(oppType1);
+          case "bug": return compareBug(oppType1);
+          case "rock": return compareRock(oppType1);
+          case "ghost": return compareGhost(oppType1);
+          case "dragon": return compareDragon(oppType1);
+        }
+      }
+      
+    
+      document.getElementById("comp-data").innerHTML = `${pokeName1}'s ${pokeType1} moves ${selectCompFunc1(pokeType1)} against ${pokeName2}'s ${oppType1} type.`
+    }, 50)
   })
 
   document.querySelector("#show-all-btn").style.display = "inline";
