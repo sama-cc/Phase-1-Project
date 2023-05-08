@@ -65,18 +65,16 @@ function compareGround(type) {
 function compareRock(type) {
   switch (type) {
     default : return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    case "fire", "ice", "flying", "bug": return "are Super Effective";
+    case "fighting", "ground": return "are Not Very Effective";
   }
 }
 
 function compareBug(type) {
   switch (type) {
     default : return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    case "grass", "poison", "psychic": return "are Super Effective";
+    case "fire", "fighting", "flying", "ghost": return "are Not Very Effective";
   }
 }
 
