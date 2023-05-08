@@ -112,9 +112,9 @@ function compareGrass(type) {
 function compareElectric(type) {
   switch (type) {
     default : return "are Effective";
-    case : return "are Super Effective";
-    case : return "are Not Very Effective";
-    case : return "has No Effect";
+    case "water", "flying": return "are Super Effective";
+    case "electric", "grass", "dragon": return "are Not Very Effective";
+    case "ground": return "has No Effect";
   }
 }
 
