@@ -389,6 +389,9 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     <tbody>
       <tr>
         <td id="comp-data"></td>
+        <td id="comp-data2"></td>
+        <td id="comp-data3"></td>
+        <td id="comp-data4"></td>
       </tr>
       <tr>
         <td id="poke1-cont"></td>
@@ -457,12 +460,10 @@ Promise.all([poke1Promise, poke2Promise])
     setTimeout(() => {
       const pokeName1 = document.getElementById("poke-name1").innerText;
       const pokeName2 = document.getElementById("poke-name2").innerText;
-      //const pokeType2HTML = document.getElementById("poke1-type2").innerHTML;
       const pokeType1 = document.getElementById("poke1-type1-span").innerText.substring(8).toLowerCase();
-      //const pokeType2 = document.getElementById("poke1-type2-span").innerText.substring(8).toLowerCase();
-      //const oppType2HTML = document.getElementById("poke2-type2").innerHTML;
+      const pokeType2 = document.getElementById("poke1-type2-span").innerText.substring(8).toLowerCase();
       const oppType1 = document.getElementById("poke2-type1-span").innerText.substring(8).toLowerCase();
-      //const oppType2 = document.getElementById("poke2-type2-span").innerText.substring(8).toLowerCase();
+      const oppType2 = document.getElementById("poke2-type2-span").innerText.substring(8).toLowerCase();
 
       function selectCompFunc1(type) {
         switch (type) {
@@ -470,7 +471,7 @@ Promise.all([poke1Promise, poke2Promise])
           case "fire": return compareFire(oppType1);
           case "water": return compareWater(oppType1);
           case "electric": return compareElectric(oppType1);
-          case "grass": return console.log(compareGrass(oppType1));
+          case "grass": return compareGrass(oppType1);
           case "ice": return compareIce(oppType1);
           case "fighting": return compareFighting(oppType1);
           case "poison": return comparePoison(oppType1);
@@ -483,9 +484,76 @@ Promise.all([poke1Promise, poke2Promise])
           case "dragon": return compareDragon(oppType1);
         }
       }
-      
+
+      function selectCompFunc2(type) {
+        switch (type) {
+          case "normal": return compareNormal(oppType2);
+          case "fire": return compareFire(oppType2);
+          case "water": return compareWater(oppType2);
+          case "electric": return compareElectric(oppType2);
+          case "grass": return compareGrass(oppType2);
+          case "ice": return compareIce(oppType2);
+          case "fighting": return compareFighting(oppType2);
+          case "poison": return comparePoison(oppType2);
+          case "ground": return compareGround(oppType2);
+          case "flying": return compareFlying(oppType2);
+          case "psychic": return comparePsychic(oppType2);
+          case "bug": return compareBug(oppType2);
+          case "rock": return compareRock(oppType2);
+          case "ghost": return compareGhost(oppType2);
+          case "dragon": return compareDragon(oppType2);
+        }
+      }      
+
+      function selectCompFunc3(type) {
+        switch (type) {
+          case "normal": return compareNormal(oppType1);
+          case "fire": return compareFire(oppType1);
+          case "water": return compareWater(oppType1);
+          case "electric": return compareElectric(oppType1);
+          case "grass": return compareGrass(oppType1);
+          case "ice": return compareIce(oppType1);
+          case "fighting": return compareFighting(oppType1);
+          case "poison": return comparePoison(oppType1);
+          case "ground": return compareGround(oppType1);
+          case "flying": return compareFlying(oppType1);
+          case "psychic": return comparePsychic(oppType1);
+          case "bug": return compareBug(oppType1);
+          case "rock": return compareRock(oppType1);
+          case "ghost": return compareGhost(oppType1);
+          case "dragon": return compareDragon(oppType1);
+        }
+      }   
+
+      function selectCompFunc4(type) {
+        switch (type) {
+          case "normal": return compareNormal(oppType2);
+          case "fire": return compareFire(oppType2);
+          case "water": return compareWater(oppType2);
+          case "electric": return compareElectric(oppType2);
+          case "grass": return compareGrass(oppType2);
+          case "ice": return compareIce(oppType2);
+          case "fighting": return compareFighting(oppType2);
+          case "poison": return comparePoison(oppType2);
+          case "ground": return compareGround(oppType2);
+          case "flying": return compareFlying(oppType2);
+          case "psychic": return comparePsychic(oppType2);
+          case "bug": return compareBug(oppType2);
+          case "rock": return compareRock(oppType2);
+          case "ghost": return compareGhost(oppType2);
+          case "dragon": return compareDragon(oppType2);
+        }
+      }   
     
       document.getElementById("comp-data").innerHTML = `${pokeName1}'s ${pokeType1} moves ${selectCompFunc1(pokeType1)} against ${pokeName2}'s ${oppType1} type.`
+
+      oppType2 !== "NONE" ? document.getElementById("comp-data2").innerHTML = `${pokeName1}'s ${pokeType1} moves ${selectCompFunc2(pokeType1)} against ${pokeName2}'s ${oppType2} type.` : document.getElementById("comp-data2").style.display ="none";
+
+      pokeType2 !== "NONE" ? document.getElementById("comp-data3").innerHTML = `${pokeName1}'s ${pokeType2} moves ${selectCompFunc3(pokeType2)} against ${pokeName2}'s ${oppType1} type.` : document.getElementById("comp-data2").style.display ="none";
+
+      oppType2 !== "NONE" ? document.getElementById("comp-data4").innerHTML = `${pokeName1}'s ${pokeType2} moves ${selectCompFunc4(pokeType2)} against ${pokeName2}'s ${oppType2} type.` : document.getElementById("comp-data2").style.display ="none";
+      
+
     }, 50)
   })
 
