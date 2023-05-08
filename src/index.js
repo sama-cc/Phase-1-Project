@@ -275,7 +275,7 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
 
   poke1 === false ? document.getElementById("alert-text-1").style.display = "inline" : poke1True();
   
-  poke2 === false ? document.getElementById("alert-text-2").style.display = "inline" : poke1True();
+  poke2 === false ? document.getElementById("alert-text-2").style.display = "inline" : poke2True();
 
   document.querySelector("#show-all-btn").style.display = "inline";
 })
