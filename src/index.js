@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
       pokeFormContainer.style.display = "block";
     } else {
       pokeFormContainer.style.display = "none";
+      document.getElementById("alert-text-1").style.display = "none"
+      document.getElementById("alert-text-2").style.display = "none"
     }
   });
   
@@ -412,17 +414,7 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     </tbody>  
   </table>
   `
-  function findStringValue1(string) {
-    const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
-    const stringValue = pokeKeysLow.indexOf(string) + 1;
-    if (stringValue == false) {
-      return false;
-    } else {
-      return stringValue;
-    }
-  }  
-
-  function findStringValue2(string) {
+  function findStringValue(string) {
     const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
     const stringValue = pokeKeysLow.indexOf(string) + 1;
     if (stringValue == false) {
@@ -437,12 +429,12 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   
   function queryValue1() {
     const value = document.getElementById("poke-box1").value;
-    return value == parseInt(value) ? parseInt(value) : findStringValue1(value.toLowerCase())
+    return value == parseInt(value) ? parseInt(value) : findStringValue(value.toLowerCase())
   }  
 
   function queryValue2() {
     const value = document.getElementById("poke-box2").value;
-    return value == parseInt(value) ? parseInt(value) : findStringValue2(value.toLowerCase())
+    return value == parseInt(value) ? parseInt(value) : findStringValue(value.toLowerCase())
   }
   
   function poke1True() {
@@ -515,54 +507,14 @@ Promise.all([poke1Promise, poke2Promise])
           case "dragon": return compareDragon(oppType2);
         }
       }      
-
-      function selectCompFunc3(type) {
-        switch (type) {
-          case "normal": return compareNormal(oppType1);
-          case "fire": return compareFire(oppType1);
-          case "water": return compareWater(oppType1);
-          case "electric": return compareElectric(oppType1);
-          case "grass": return compareGrass(oppType1);
-          case "ice": return compareIce(oppType1);
-          case "fighting": return compareFighting(oppType1);
-          case "poison": return comparePoison(oppType1);
-          case "ground": return compareGround(oppType1);
-          case "flying": return compareFlying(oppType1);
-          case "psychic": return comparePsychic(oppType1);
-          case "bug": return compareBug(oppType1);
-          case "rock": return compareRock(oppType1);
-          case "ghost": return compareGhost(oppType1);
-          case "dragon": return compareDragon(oppType1);
-        }
-      }   
-
-      function selectCompFunc4(type) {
-        switch (type) {
-          case "normal": return compareNormal(oppType2);
-          case "fire": return compareFire(oppType2);
-          case "water": return compareWater(oppType2);
-          case "electric": return compareElectric(oppType2);
-          case "grass": return compareGrass(oppType2);
-          case "ice": return compareIce(oppType2);
-          case "fighting": return compareFighting(oppType2);
-          case "poison": return comparePoison(oppType2);
-          case "ground": return compareGround(oppType2);
-          case "flying": return compareFlying(oppType2);
-          case "psychic": return comparePsychic(oppType2);
-          case "bug": return compareBug(oppType2);
-          case "rock": return compareRock(oppType2);
-          case "ghost": return compareGhost(oppType2);
-          case "dragon": return compareDragon(oppType2);
-        }
-      }   
     
       document.getElementById("comp-data").innerHTML = `${pokeName1}'s ${pokeType1} moves ${selectCompFunc1(pokeType1)} against ${pokeName2}'s ${oppType1} type.`
 
       oppType2 !== "none" ? document.getElementById("comp-data2").innerHTML = `${pokeName1}'s ${pokeType1} moves ${selectCompFunc2(pokeType1)} against ${pokeName2}'s ${oppType2} type.`: document.getElementById("comp-data2").style.display ="none";
 
-      pokeType2 !== "none" ? document.getElementById("comp-data3").innerHTML = `${pokeName1}'s ${pokeType2} moves ${selectCompFunc3(pokeType2)} against ${pokeName2}'s ${oppType1} type.` : document.getElementById("comp-data3").style.display ="none";
+      pokeType2 !== "none" ? document.getElementById("comp-data3").innerHTML = `${pokeName1}'s ${pokeType2} moves ${selectCompFunc1(pokeType2)} against ${pokeName2}'s ${oppType1} type.` : document.getElementById("comp-data3").style.display ="none";
 
-      (oppType2 !== "none"  && pokeType2 !== "none") ? document.getElementById("comp-data4").innerHTML = `${pokeName1}'s ${pokeType2} moves ${selectCompFunc4(pokeType2)} against ${pokeName2}'s ${oppType2} type.` : document.getElementById("comp-data4").style.display ="none";
+      (oppType2 !== "none" && pokeType2 !== "none") ? document.getElementById("comp-data4").innerHTML = `${pokeName1}'s ${pokeType2} moves ${selectCompFunc2(pokeType2)} against ${pokeName2}'s ${oppType2} type.` : document.getElementById("comp-data4").style.display ="none";
       
 
     }, 50)
