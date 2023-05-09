@@ -57,6 +57,18 @@ body {
   background-size: cover;
 }
 
+#comp-data-table {
+  text-align: left;
+  font-size: large;
+  font-family: bradley hand;
+  padding: 3rem;
+  background-image: url("https://media-s3-us-east-1.ceros.com/hype-beast/images/2018/07/13/2fd783a5482aff60e6ae7aa327f2c9c9/text-box.png?imageOpt=1&fit=bounds&width=593");
+  background-position: center;
+  background-size: 800px 140px;
+  background-repeat: no-repeat;
+}
+
+
 .card {
   text-align: center;
   border: none;

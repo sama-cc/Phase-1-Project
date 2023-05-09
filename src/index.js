@@ -387,7 +387,7 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   e.preventDefault();  
   const pokeCollection = document.getElementById("pokemon-collection");
   pokeCollection.innerHTML=`
-  <table style="position:relative;width:100%;margin:0 auto">
+  <table id="comp-data-table" style="position:relative;width:100%;margin:0 auto">
     <tbody style="text-align:center">
       <tr>
         <td id="comp-data"></td>
@@ -404,7 +404,7 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     </tbody>
   </table>
 
-  <table id="compt-table" style="position:relative;width:100%;margin:0 auto">
+  <table id="comp-table" style="position:relative;width:100%;margin:0 auto">
     <tbody style="text-align:center">
       <tr>
         <td id="poke1-cont"></td>
@@ -508,13 +508,13 @@ Promise.all([poke1Promise, poke2Promise])
         }
       }      
     
-      document.getElementById("comp-data").innerHTML = `${pokeName1}'s ${pokeType1} type ${selectCompFunc1(pokeType1)} against ${pokeName2}'s ${oppType1} type.`
+      document.getElementById("comp-data").innerHTML = `${pokeName1}'s <span class="${pokeType1}">${pokeType1}</span> type ${selectCompFunc1(pokeType1)} against ${pokeName2}'s <span class="${oppType1}">${oppType1}</span> type.`
 
-      oppType2 !== "none" ? document.getElementById("comp-data2").innerHTML = `${pokeName1}'s ${pokeType1} type ${selectCompFunc2(pokeType1)} against ${pokeName2}'s ${oppType2} type.`: document.getElementById("comp-data2").style.display ="none";
+      oppType2 !== "none" ? document.getElementById("comp-data2").innerHTML = `${pokeName1}'s <span class="${pokeType1}">${pokeType1}</span> type ${selectCompFunc2(pokeType1)} against ${pokeName2}'s <span class="${oppType2}">${oppType2}</span> type.`: document.getElementById("comp-data2").style.display ="none";
 
-      pokeType2 !== "none" ? document.getElementById("comp-data3").innerHTML = `${pokeName1}'s ${pokeType2} type ${selectCompFunc1(pokeType2)} against ${pokeName2}'s ${oppType1} type.` : document.getElementById("comp-data3").style.display ="none";
+      pokeType2 !== "none" ? document.getElementById("comp-data3").innerHTML = `${pokeName1}'s <span class="${pokeType2}">${pokeType2}</span> type ${selectCompFunc1(pokeType2)} against ${pokeName2}'s <span class="${oppType1}">${oppType1}</span> type.` : document.getElementById("comp-data3").style.display ="none";
 
-      (oppType2 !== "none" && pokeType2 !== "none") ? document.getElementById("comp-data4").innerHTML = `${pokeName1}'s ${pokeType2} type ${selectCompFunc2(pokeType2)} against ${pokeName2}'s ${oppType2} type.` : document.getElementById("comp-data4").style.display ="none";
+      (oppType2 !== "none" && pokeType2 !== "none") ? document.getElementById("comp-data4").innerHTML = `${pokeName1}'s <span class="${pokeType2}">${pokeType2}</span> type ${selectCompFunc2(pokeType2)} against ${pokeName2}'s <span class="${oppType2}">${oppType2}</span> type.` : document.getElementById("comp-data4").style.display ="none";
       
 
     }, 50)
