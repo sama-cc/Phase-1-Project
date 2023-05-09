@@ -8,8 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
     addPoke = !addPoke;
     if (addPoke) {
       pokeFormContainer.style.display = "block";
+      document.getElementById("poke-comp-btn").innerText = "Hide";
+      document.getElementById("poke-comp-btn").style.border = "1px";
+      document.getElementById("poke-comp-btn").style.height = "auto";
     } else {
       pokeFormContainer.style.display = "none";
+      document.getElementById("poke-comp-btn").style.height = "3rem";
+      document.getElementById("poke-comp-btn").innerText = "Choose Pokemon to Compare"
       document.getElementById("alert-text-1").style.display = "none"
       document.getElementById("alert-text-2").style.display = "none"
     }

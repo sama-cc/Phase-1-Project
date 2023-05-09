@@ -105,7 +105,7 @@ body {
 button {
   position: relative;
   background-color: #e04b52;
-  border: none;
+  border: 0px;
   border-radius: 5px;
   height: 3rem;
   width: max-content;
