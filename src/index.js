@@ -391,19 +391,19 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   e.preventDefault();  
   const pokeCollection = document.getElementById("pokemon-collection");
   pokeCollection.innerHTML=`
-   <table id="comp-data-table" style="position:relative;width:100%;height:200px;margin:0 auto">
+   <table id="comp-data-table" style="width:100%;height:200px;">
     <tbody style="text-align:center">
       <tr>
-        <td id="comp-data"></td>
+        <td id="comp-data" style="padding:0px"></td>
       </tr>
       <tr>
-        <td id="comp-data2"></td>
+        <td id="comp-data2" style="padding:0px"></td>
       </tr>
       <tr>
-        <td id="comp-data3"></td>
+        <td id="comp-data3" style="padding:0px"></td>
        </tr>
        <tr> 
-        <td id="comp-data4"></td>
+        <td id="comp-data4" style="padding:0px"></td>
       </tr>
     </tbody>
   </table>
@@ -576,7 +576,6 @@ Promise.all([poke1Promise, poke2Promise])
   document.querySelector("#pokemon-collection").style.overflowY = "hidden";  
   document.getElementById("poke-box1").value = "";
   document.getElementById("poke-box2").value = "";
-  document.querySelector(".container").style.display = "none";
   document.querySelector("#guide").style.display = "block";
   document.querySelector("#show-all-btn").style.display = "inline";
 })
