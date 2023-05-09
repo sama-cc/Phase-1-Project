@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
   showAllBtn.addEventListener("click", () => {
     document.getElementById("pokemon-collection").innerHTML = "";
     fetchCardData();
+    document.querySelector("#pokemon-collection").style.height = "72vh";  
+    document.querySelector("#pokemon-collection").style.overflowY = "auto";  
     showAllBtn.style.display = "none";
+
   });
 });
 
@@ -570,6 +573,11 @@ Promise.all([poke1Promise, poke2Promise])
     }, 50)
   })
 
+  document.querySelector("#pokemon-collection").style.height = "auto";  
+  document.querySelector("#pokemon-collection").style.overflowY = "hidden";  
+  document.getElementById("poke-box1").value = "";
+  document.getElementById("poke-box2").value = "";
+  document.querySelector(".container").style.display = "none";
   document.querySelector("#show-all-btn").style.display = "inline";
 })
 
