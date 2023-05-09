@@ -387,7 +387,7 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   e.preventDefault();  
   const pokeCollection = document.getElementById("pokemon-collection");
   pokeCollection.innerHTML=`
-  <table id="comp-data-table" style="position:relative;width:100%;height:auto;margin:0 auto">
+   <table id="comp-data-table" style="position:relative;width:100%;height:200px;margin:0 auto">
     <tbody style="text-align:center">
       <tr>
         <td id="comp-data"></td>
@@ -426,15 +426,23 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   
   const poke1 = queryValue1();
   const poke2 = queryValue2();
-  
+
+  function isFirstGen(value) {
+    if (value < 152) {
+      return value;
+    } else {
+      return false;
+    }
+  }
+    
   function queryValue1() {
     const value = document.getElementById("poke-box1").value;
-    return value == parseInt(value) ? parseInt(value) : findStringValue(value.toLowerCase())
+    return value == parseInt(value) ? isFirstGen(parseInt(value)) : findStringValue(value.toLowerCase())
   }  
 
   function queryValue2() {
     const value = document.getElementById("poke-box2").value;
-    return value == parseInt(value) ? parseInt(value) : findStringValue(value.toLowerCase())
+    return value == parseInt(value) ? isFirstGen(parseInt(value)) : findStringValue(value.toLowerCase())
   }
   
   function poke1True() {

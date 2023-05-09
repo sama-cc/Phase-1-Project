@@ -58,6 +58,7 @@ body {
 }
 
 #comp-data-table {
+  table-layout: fixed;
   text-align: left;
   font-size: large;
   font-family: impact;
@@ -67,6 +68,7 @@ body {
   background-size: 800px 140px;
   background-repeat: no-repeat;
 }
+
 
 .no-effect {
   color:white;
