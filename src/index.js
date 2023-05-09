@@ -347,11 +347,11 @@ Mew:151}
 
 const pokeKeys = Object.keys(pokemonList);
 
-const pokeValues = Object.values(pokemonList)
+const pokeValues = Object.values(pokemonList);
 
 // alert called when fetch fails
 
-const sendAlert = () => console.log("There was an error. Please try again.")
+const sendAlert = () => alert("There was an error. Please try again.");
 
 // handles card generation
 
@@ -381,13 +381,13 @@ const createCard2 = (pokemon) => {
   card.innerHTML = `<h1 id="poke-name2" style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry-vs">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p id="poke2-type1" style="position:relative;top:-3px;left:-20px; font-size:1rem"><span id="poke2-type1-span" class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span><br /><span id="poke2-type2"><span id="poke2-type2-span" class="${handleDoubleType(handleFairy(handleType2()))}">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></span></p></div>`;
 }
 
-// creates comparison based on submitted form data
+// creates comparison data based on submitted form data
 
 document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   e.preventDefault();  
   const pokeCollection = document.getElementById("pokemon-collection");
   pokeCollection.innerHTML=`
-  <table id="comp-data-table" style="position:relative;width:100%;margin:0 auto">
+  <table id="comp-data-table" style="position:relative;width:100%;height:auto;margin:0 auto">
     <tbody style="text-align:center">
       <tr>
         <td id="comp-data"></td>
@@ -507,14 +507,56 @@ Promise.all([poke1Promise, poke2Promise])
           case "dragon": return compareDragon(oppType2);
         }
       }      
+
+      function selectHighlight1() {
+        const effect = selectCompFunc1(pokeType1);
+        switch (effect) {
+          case "is Effective": return "";
+          case "is Super Effective": return "super-effective";
+          case "is Not Very Effective": return "nv-effective";
+          case "has No Effect": return "no-effect";
+        }
+      }
+
+      function selectHighlight2() {
+        const effect = selectCompFunc2(pokeType1);
+        switch (effect) {
+          case "is Effective": return "";
+          case "is Super Effective": return "super-effective";
+          case "is Not Very Effective": return "nv-effective";
+          case "has No Effect": return "no-effect";
+        }
+      }
+
+      function selectHighlight3() {
+        const effect = selectCompFunc1(pokeType2);
+        switch (effect) {
+          case "is Effective": return "";
+          case "is Super Effective": return "super-effective";
+          case "is Not Very Effective": return "nv-effective";
+          case "has No Effect": return "no-effect";
+        }
+      }
+
+      function selectHighlight4() {
+        const effect = selectCompFunc2(pokeType2);
+        switch (effect) {
+          case "is Effective": return "";
+          case "is Super Effective": return "super-effective";
+          case "is Not Very Effective": return "nv-effective";
+          case "has No Effect": return "no-effect";
+        }
+      }
+
+
     
-      document.getElementById("comp-data").innerHTML = `${pokeName1}'s <span class="${pokeType1}">${pokeType1}</span> type ${selectCompFunc1(pokeType1)} against ${pokeName2}'s <span class="${oppType1}">${oppType1}</span> type.`
+      document.getElementById("comp-data").innerHTML = `${pokeName1}'s <span class="${pokeType1}" style="font-weight: normal">${pokeType1}</span> type <span class="${selectHighlight1()}">${selectCompFunc1(pokeType1)}</span> against ${pokeName2}'s <span class="${oppType1}" style="font-weight: normal">${oppType1}</span> type.`
 
-      oppType2 !== "none" ? document.getElementById("comp-data2").innerHTML = `${pokeName1}'s <span class="${pokeType1}">${pokeType1}</span> type ${selectCompFunc2(pokeType1)} against ${pokeName2}'s <span class="${oppType2}">${oppType2}</span> type.`: document.getElementById("comp-data2").style.display ="none";
+      oppType2 !== "none" ? document.getElementById("comp-data2").innerHTML = `${pokeName1}'s <span class="${pokeType1}" style="font-weight: normal">${pokeType1}</span> type <span class="${selectHighlight2()}">${selectCompFunc2(pokeType1)}</span> against ${pokeName2}'s <span class="${oppType2}" style="font-weight: normal">${oppType2}</span> type.`: document.getElementById("comp-data2").style.display ="none";
 
-      pokeType2 !== "none" ? document.getElementById("comp-data3").innerHTML = `${pokeName1}'s <span class="${pokeType2}">${pokeType2}</span> type ${selectCompFunc1(pokeType2)} against ${pokeName2}'s <span class="${oppType1}">${oppType1}</span> type.` : document.getElementById("comp-data3").style.display ="none";
+      pokeType2 !== "none" ? document.getElementById("comp-data3").innerHTML = `${pokeName1}'s <span class="${pokeType2}" style="font-weight: normal">${pokeType2}</span> type <span class="${selectHighlight3()}">${selectCompFunc1(pokeType2)}</span> against ${pokeName2}'s <span class="${oppType1}" style="font-weight: normal">${oppType1}</span> type.` : document.getElementById("comp-data3").style.display ="none";
 
-      (oppType2 !== "none" && pokeType2 !== "none") ? document.getElementById("comp-data4").innerHTML = `${pokeName1}'s <span class="${pokeType2}">${pokeType2}</span> type ${selectCompFunc2(pokeType2)} against ${pokeName2}'s <span class="${oppType2}">${oppType2}</span> type.` : document.getElementById("comp-data4").style.display ="none";
+      (oppType2 !== "none" && pokeType2 !== "none") ? document.getElementById("comp-data4").innerHTML = `${pokeName1}'s <span class="${pokeType2}" style="font-weight: normal">${pokeType2}</span> type <span class="${selectHighlight4()}">${selectCompFunc2(pokeType2)}</span> against ${pokeName2}'s <span class="${oppType2}" style="font-weight: normal">${oppType2}</span> type.` : document.getElementById("comp-data4").style.display ="none";
       
 
     }, 50)
