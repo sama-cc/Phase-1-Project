@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   showAllBtn.addEventListener("click", () => {
     document.getElementById("pokemon-collection").innerHTML = "";
     fetchCardData();
+    document.querySelector("#guide").style.display = "none";
     document.querySelector("#pokemon-collection").style.height = "72vh";  
     document.querySelector("#pokemon-collection").style.overflowY = "auto";  
     showAllBtn.style.display = "none";
@@ -558,8 +559,6 @@ Promise.all([poke1Promise, poke2Promise])
           case "has No Effect": return "no-effect";
         }
       }
-
-
     
       document.getElementById("comp-data").innerHTML = `${pokeName1}'s <span class="${pokeType1}" style="font-weight: normal">${pokeType1}</span> type <span class="${selectHighlight1()}">${selectCompFunc1(pokeType1)}</span> against ${pokeName2}'s <span class="${oppType1}" style="font-weight: normal">${oppType1}</span> type.`
 
@@ -578,6 +577,7 @@ Promise.all([poke1Promise, poke2Promise])
   document.getElementById("poke-box1").value = "";
   document.getElementById("poke-box2").value = "";
   document.querySelector(".container").style.display = "none";
+  document.querySelector("#guide").style.display = "block";
   document.querySelector("#show-all-btn").style.display = "inline";
 })
 

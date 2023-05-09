@@ -72,7 +72,7 @@ body {
 
 .no-effect {
   color:white;
-  background-color: #000;
+  background-color:red;
 }
 
 .super-effective {
@@ -258,6 +258,6 @@ button:hover {
 }
 
 .normal, .NORMAL {
-  color:white;
+  color:gray;
   font-weight:bold;
 }
