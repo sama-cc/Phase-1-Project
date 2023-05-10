@@ -75,13 +75,6 @@ Another comparison can be made by inputting pokemon into the Entry Boxes and cli
 
     A. Please contact me using the email listed in the Support section.
 
-
-## Support
-
-If you have any questions regarding how PokeComparer is used or encounter any issues please feel free to contact me using the contact information below.
-
-Email: sam.camhi@gmail.com
-
 ## Roadmap
 
 - Make the pokemon display cards clickable to select which pokemon to compare.
@@ -91,6 +84,11 @@ Email: sam.camhi@gmail.com
 - Add support for other generations of the pokedex.
 - Add a pokemon type Weakness and Strength chart.
 
+## Support
+
+If you have any questions regarding how PokeComparer is used or encounter any issues please feel free to contact me using the contact information below.
+
+Email: sam.camhi@gmail.com
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
