@@ -24,7 +24,7 @@ Upon clicking on the "Choose Pokemon to Compare" button the following will be di
 
 2. Pokemon 2 Entry Box - This box can use either a pokemon's name or Pokedex Entry # to submit as the second pokemon to compare.
 
-3. The "Compare" button - This button is used to submit the two pokemon to compare once a pokemon name or Pokedex Entry # has been input into both Entry Boxes. If a valid pokemon name or Pokedex # has not been entered into either box then an error will be displayed for one or both of the boxes. For more help, please see the FAQ or Support sections.
+3. The "Compare Pokemon" button - This button is used to submit the two pokemon to compare once a pokemon name or Pokedex Entry # has been input into both Entry Boxes. If a valid pokemon name or Pokedex # has not been entered into either box then an error will be displayed for one or both of the boxes. For more help, please see the FAQ or Support sections.
 
 4. The "Hide" button - This button will hide the input form. It becomes the "Choose Pokemon to Compare" button once the form is hidden.
 
@@ -34,17 +34,7 @@ Upon submitting the form the following will be displayed:
 
 1. The "Show All Pokemon" button - This button make the application return to the Pokemon Collection screen.
 
-2. Damage Multiplier Guide - This guide shows the damage multiplier for each level of type effectiveness.
-    - The type effectiveness levels are as follows:
-
-        | Level              | DMG Multiplier  |
-        | ------------------ | --------------- |
-        | Effective          | x 1             |
-        | Super Effective    | x 2             |
-        | Not Very Effective | x 1/2           |
-        | No Effect          | x 0             |   
-
-3. The Comparison Data Statements - In the centered text box below the form and Damage Multiplier Guide you will find comparison data statements for each type interaction in the following format:
+2. The Comparison Data Statements - In the centered text box below the form and Damage Multiplier Guide you will find comparison data statements for each type interaction in the following format:
 
     - "POKEMON 1's type is "effectiveness" against POKEMON 2's type."
 
@@ -57,9 +47,19 @@ Upon submitting the form the following will be displayed:
         | POKEMON 1's Type 2 (if available) vs POKEMON 2's Type 1.                |
         | POKEMON 1's Type 2 (if available) vs POKEMON 2's Type 2 (if available). |
 
-4. Pokemon 1 Display Card - A display card that shows Pokemon 1's Pokedex Entry #, name, appearance and types.
+3. Pokemon 1 Display Card - A display card that shows Pokemon 1's Pokedex Entry #, name, appearance and types.
 
-5. Pokemon 2 Display Card - A display card that shows Pokemon 2's Pokedex Entry #, name, appearance and types.
+4. Pokemon 2 Display Card - A display card that shows Pokemon 2's Pokedex Entry #, name, appearance and types.
+
+5. Damage Multiplier Guide - This guide shows the damage multiplier for each level of type effectiveness. (not marked in image)
+    - The type effectiveness levels are as follows:
+
+        | Level              | DMG Multiplier  |
+        | ------------------ | --------------- |
+        | Effective          | x 1             |
+        | Super Effective    | x 2             |
+        | Not Very Effective | x 1/2           |
+        | No Effect          | x 0             |   
 
 Another comparison can be made by inputting pokemon into the Entry Boxes and clicking on the "Compare" button again. The Pokemon Collection can be shown again by clicking the "Show All Pokemon Button" if needed as a reference.
 
