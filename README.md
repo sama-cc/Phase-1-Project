@@ -32,7 +32,7 @@ Upon submitting the form the following will be displayed:
 
 ![Comparison View](comparisondata.png)
 
-1. The "Show All Pokemon" button - This button make the application return to the Pokemon Collection screen.
+1. The "Show All Pokemon" button - This button makes the application return to the Pokemon Collection screen.
 
 2. The Comparison Data Statements - In the centered text box below the form and Damage Multiplier Guide you will find comparison data statements for each type interaction in the following format:
 
