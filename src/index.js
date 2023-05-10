@@ -423,7 +423,17 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     </tbody>  
   </table>
   `
-  function findStringValue(string) {
+  function findStringValue1(string) {
+    const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
+    const stringValue = pokeKeysLow.indexOf(string) + 1;
+    if (stringValue == false) {
+      return false;
+    } else {
+      return stringValue;
+    }
+  }  
+
+  function findStringValue2(string) {
     const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
     const stringValue = pokeKeysLow.indexOf(string) + 1;
     if (stringValue == false) {
@@ -446,12 +456,12 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     
   function queryValue1() {
     const value = document.getElementById("poke-box1").value;
-    return value == parseInt(value) ? isFirstGen(parseInt(value)) : findStringValue(value.toLowerCase())
+    return value == parseInt(value) ? isFirstGen(parseInt(value)) : findStringValue1(value.toLowerCase())
   }  
 
   function queryValue2() {
     const value = document.getElementById("poke-box2").value;
-    return value == parseInt(value) ? isFirstGen(parseInt(value)) : findStringValue(value.toLowerCase())
+    return value == parseInt(value) ? isFirstGen(parseInt(value)) : findStringValue2(value.toLowerCase())
   }
   
   function poke1True() {
