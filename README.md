@@ -10,11 +10,15 @@ PokeComparer takes one pokemon from the first generation pokedex and compares it
 
 Upon loading the application screen the following will be displayed:
 
+![PokeCompare Homescreen](pokecomparehome.png)
+
 1. The "Choose Pokemon to Compare" button - This button reveals the input form for selecting pokemon to compare. Upon clicking this button it will become the "Hide" button.
 
 2. The 1st Generation Pokemon Collection - This is a collection of display cards showing each pokemon's Pokedex Entry #, name, appearance and types. The collection is in ascending order based on Pokedex Entry #.
 
 Upon clicking on the "Choose Pokemon to Compare" button the following will be displayed:
+
+![Comparison Form](pokeform.png)
 
 1. Pokemon 1 Entry Box - This box can use either a pokemon's name or Pokedex Entry # to submit as the first pokemon to compare.
 
@@ -25,6 +29,8 @@ Upon clicking on the "Choose Pokemon to Compare" button the following will be di
 4. The "Hide" button - This button will hide the input form. It becomes the "Choose Pokemon to Compare" button once the form is hidden.
 
 Upon submitting the form the following will be displayed:
+
+![Comparison View](comparisondata.png)
 
 1. The "Show All Pokemon" button - This button make the application return to the Pokemon Collection screen.
 
