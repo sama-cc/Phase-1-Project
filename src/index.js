@@ -584,7 +584,7 @@ Promise.all([poke1Promise, poke2Promise])
       (oppType2 !== "none" && pokeType2 !== "none") ? document.getElementById("comp-data4").innerHTML = `${pokeName1}'s <span class="${pokeType2}" style="font-weight: normal">${pokeType2}</span> type <span class="${selectHighlight4()}">${selectCompFunc2(pokeType2)}</span> against ${pokeName2}'s <span class="${oppType2}" style="font-weight: normal">${oppType2}</span> type.` : document.getElementById("comp-data4").style.display ="none";
       
 
-    }, 50)
+    }, 150)
   })
 
   document.querySelector("#pokemon-collection").style.height = "auto";  
