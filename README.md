@@ -6,6 +6,10 @@ PokeComparer is a Single Page Application (SPA) written in Javascript/HTML/CSS t
 
 PokeComparer takes one pokemon from the first generation pokedex and compares it to another pokemon. When the application first loads you will see display card information showing all 151 pokemon with their Pokedex Entry #, name, appearance and types listed. Using this information you can input two pokemon to compare using the form at the top of the application. Then, PokeComparer will take the types of the first pokemon (displayed on the left) and compare it to the types of the second pokemon (displayed on the right) for type effectiveness. Type effectiveness refers to how much damage one pokemon type does against another pokemon type. It then displays whether each of the first pokemon's types are effective, super effective, not very effective or has no effect on each of the second pokemon's types. A guide is also displayed explaining the damage multiplier for each level of type effectiveness. 
 
+## Installation
+
+Navigate to https://github.com/sama-cc/Phase-1-Project and click on the green <> CODE button. Choose "Download ZIP" and download the zip file. Once downloaded, unzip the file and then open the file "index.html" in your browser.
+
 ## Usage
 
 Upon loading the application screen the following will be displayed:
