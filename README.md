@@ -14,7 +14,7 @@ Navigate to https://github.com/sama-cc/Phase-1-Project and click on the green <>
 
 Upon loading the application screen the following will be displayed:
 
-![PokeCompare Homescreen](pokecomparehome.png)
+![PokeComparer Homescreen](pokecomparehome.png)
 
 1. The "Choose Pokemon to Compare" button - This button reveals the input form for selecting pokemon to compare. Upon clicking this button it will become the "Hide" button.
 
