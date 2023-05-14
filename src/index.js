@@ -1,4 +1,8 @@
+//hides comparison form 
+
 let addPoke = false;
+
+//adds event listeners to addBtn and showAllBtn
 
 document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#poke-comp-btn");
@@ -31,6 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+//these two Arrays are used to convert Pokemon names to values 
+
 const pokeKeys = Object.keys(pokemonList);
 
 const pokeValues = Object.values(pokemonList);
@@ -39,7 +45,7 @@ const pokeValues = Object.values(pokemonList);
 
 const sendAlert = () => alert("There was an error. Please try again.");
 
-// handles card generation
+// handles card generation for the pokemon collection container
 
 const createCard = (pokemon) => {
   let card = document.createElement("div");
@@ -51,6 +57,8 @@ const createCard = (pokemon) => {
   document.getElementById("pokemon-collection").appendChild(card);
 }
 
+// creates card for Pokemon 1 when a comparison is submitted
+
 const createCard1 = (pokemon) => {
   let card = document.getElementById("poke1-cont");
   const handleType2 = () => pokemon.types.length === 2 ? pokemon.types[1].type.name : "NONE";
@@ -58,6 +66,8 @@ const createCard1 = (pokemon) => {
   const handleDoubleType = (type) => type === handleFairy(pokemon.types[0].type.name) ? "NONE" : type;  
   card.innerHTML = `<h1 id="poke-name1" style="color:white">${pokemon.forms[0].name.toUpperCase()}</h1><h4 class="poke-entry-vs">Pokedex Entry #${pokemon.id}</h4><img src="${pokemon.sprites.front_default}" class="poke-avatar" /><div class="poke-types"><p id="poke1-type1" style="position:relative;top:-3px;left:-20px; font-size:1rem"><span id="poke1-type1-span" class="${handleFairy(pokemon.types[0].type.name)}">Type 1: ${handleFairy(pokemon.types[0].type.name).toUpperCase()}</span><br /><span id="poke1-type2"><span id="poke1-type2-span" class="${handleDoubleType(handleFairy(handleType2()))}">Type 2: ${handleDoubleType(handleFairy(handleType2())).toUpperCase()}</span></span></p></div>`;
 }
+
+// creates card for Pokemon 2 when a comparison is submitted
 
 const createCard2 = (pokemon) => {
   let card = document.getElementById("poke2-cont");
@@ -71,6 +81,9 @@ const createCard2 = (pokemon) => {
 
 document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   e.preventDefault();  
+
+  // creates the containers for pokemon data card 1, pokemon data card 2 and the comparison statements
+
   const pokeCollection = document.getElementById("pokemon-collection");
   pokeCollection.innerHTML=`
    <table id="comp-data-table" style="width:100%;height:200px;">
@@ -100,6 +113,8 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     </tbody>  
   </table>
   `
+  // for pokemon 1 if the submitted string is a number then a number is returned, else a string is converted to a number
+  
   function findStringValue1(string) {
     const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
     const stringValue = pokeKeysLow.indexOf(string) + 1;
@@ -109,6 +124,8 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
       return stringValue;
     }
   }  
+
+  // for pokemon 2 if the submitted string is a number then a number is returned, else a string is converted to a number
 
   function findStringValue2(string) {
     const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
@@ -120,8 +137,12 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     }
   }  
   
+  // used in ternary to determine whether a string is a valid string for the form query comparison
+
   const poke1 = queryValue1();
   const poke2 = queryValue2();
+
+  // used to make sure submitted string represents a pokemon entry # from the first generation
 
   function isFirstGen(value) {
     if (value < 152) {
@@ -130,6 +151,9 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
       return false;
     }
   }
+
+  // used in ternary to determine whether a string is a valid string for the form query comparison, 
+  // poke1 or poke2 is set to the returned value
     
   function queryValue1() {
     const value = document.getElementById("poke-box1").value;
@@ -140,6 +164,9 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     const value = document.getElementById("poke-box2").value;
     return value == parseInt(value) ? isFirstGen(parseInt(value)) : findStringValue2(value.toLowerCase())
   }
+
+  // if the submitted comparison values are found to be valid then the below functions fetch data from the API
+  // sends data to functions to create cards for pokemon 1 and pokemon 2
   
   function poke1True() {
     
@@ -158,19 +185,26 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     document.getElementById("alert-text-2").style.display = "none";
   }
 
-const poke1Promise = Promise.resolve(poke1 === false ? document.getElementById("alert-text-1").style.display = "inline" : poke1True())
+  // promises used in Promise.all to execute code in order, the ternary operators check for a valid pokemon value
+  // and show an error if not valid
 
-const poke2Promise = Promise.resolve(poke2 === false ? document.getElementById("alert-text-2").style.display = "inline" : poke2True())
+  const poke1Promise = Promise.resolve(poke1 === false ? document.getElementById("alert-text-1").style.display = "inline" : poke1True())
 
-Promise.all([poke1Promise, poke2Promise])
-  .then(() => {
-    setTimeout(() => {
+  const poke2Promise = Promise.resolve(poke2 === false ? document.getElementById("alert-text-2").style.display = "inline" : poke2True())
+
+  // makes sure the above code resolves first, otherwise the below code will cause an error
+
+  Promise.all([poke1Promise, poke2Promise])
+    .then(() => {
+      setTimeout(() => {
       const pokeName1 = document.getElementById("poke-name1").innerText;
       const pokeName2 = document.getElementById("poke-name2").innerText;
       const pokeType1 = document.getElementById("poke1-type1-span").innerText.substring(8).toLowerCase();
       const pokeType2 = document.getElementById("poke1-type2-span").innerText.substring(8).toLowerCase();
       const oppType1 = document.getElementById("poke2-type1-span").innerText.substring(8).toLowerCase();
       const oppType2 = document.getElementById("poke2-type2-span").innerText.substring(8).toLowerCase();
+
+      // the two functions below select a function to use to compare pokemon 1's types and pokemon 2's types
 
       function selectCompFunc1(type) {
         switch (type) {
@@ -212,6 +246,8 @@ Promise.all([poke1Promise, poke2Promise])
         }
       }      
 
+      // the four functions below highlight text in the populated comparison statements based on type effectiveness
+
       function selectHighlight1() {
         const effect = selectCompFunc1(pokeType1);
         switch (effect) {
@@ -251,6 +287,9 @@ Promise.all([poke1Promise, poke2Promise])
           case "has No Effect": return "no-effect";
         }
       }
+
+      // the first line of code below creates the comparison statement for pokemon 1 type 1 vs pokemon 2 type 1,
+      // next three lines use a ternary to determine whether the next statement is required, if true it creates those statements
     
       document.getElementById("comp-data").innerHTML = `${pokeName1}'s <span class="${pokeType1}" style="font-weight: normal">${pokeType1}</span> type <span class="${selectHighlight1()}">${selectCompFunc1(pokeType1)}</span> against ${pokeName2}'s <span class="${oppType1}" style="font-weight: normal">${oppType1}</span> type.`
 
@@ -264,6 +303,8 @@ Promise.all([poke1Promise, poke2Promise])
     }, 150)
   })
 
+  // changes to the DOM when a comparison is submitted
+
   document.querySelector("#pokemon-collection").style.height = "auto";  
   document.querySelector("#pokemon-collection").style.overflowY = "hidden";  
   document.getElementById("poke-box1").value = "";
@@ -271,6 +312,8 @@ Promise.all([poke1Promise, poke2Promise])
   document.querySelector("#guide").style.display = "block";
   document.querySelector("#show-all-btn").style.display = "inline";
 })
+
+// this function creates the 151 pokemon data cards in the pokemon collection container
 
 async function fetchCardData() {
   for (poke=1; poke<152; poke++) {
