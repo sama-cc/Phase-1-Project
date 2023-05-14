@@ -115,7 +115,7 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
   `
   // for pokemon 1 if the submitted string is a number then a number is returned, else a string is converted to a number
   
-  function findStringValue1(string) {
+  function findStringValue(string) {
     const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
     const stringValue = pokeKeysLow.indexOf(string) + 1;
     if (stringValue == false) {
@@ -125,18 +125,6 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     }
   }  
 
-  // for pokemon 2 if the submitted string is a number then a number is returned, else a string is converted to a number
-
-  function findStringValue2(string) {
-    const pokeKeysLow = pokeKeys.map(poke=>poke.toLowerCase());
-    const stringValue = pokeKeysLow.indexOf(string) + 1;
-    if (stringValue == false) {
-      return false;
-    } else {
-      return stringValue;
-    }
-  }  
-  
   // used in ternary to determine whether a string is a valid string for the form query comparison
 
   const poke1 = queryValue1();
@@ -157,12 +145,12 @@ document.querySelector(".poke-search-form").addEventListener("submit", (e) => {
     
   function queryValue1() {
     const value = document.getElementById("poke-box1").value;
-    return value == parseInt(value) ? isFirstGen(parseInt(value)) : findStringValue1(value.toLowerCase())
+    return value == parseInt(value) ? isFirstGen(parseInt(value)) : findStringValue(value.toLowerCase())
   }  
 
   function queryValue2() {
     const value = document.getElementById("poke-box2").value;
-    return value == parseInt(value) ? isFirstGen(parseInt(value)) : findStringValue2(value.toLowerCase())
+    return value == parseInt(value) ? isFirstGen(parseInt(value)) : findStringValue(value.toLowerCase())
   }
 
   // if the submitted comparison values are found to be valid then the below functions fetch data from the API
