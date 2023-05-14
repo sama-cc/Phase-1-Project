@@ -1,3 +1,5 @@
+// below is an object of pokemon and their pokedex entry numbers
+
 const pokemonList = {
     Bulbasaur:1,
     Ivysaur:2,

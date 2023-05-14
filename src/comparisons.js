@@ -1,3 +1,5 @@
+// below areall of the compare functions for each pokemon type
+
 function compareNormal(type) {
     switch (type) {
       default : return "is Effective";
