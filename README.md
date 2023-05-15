@@ -67,6 +67,12 @@ Upon submitting the form the following will be displayed:
 
 Another comparison can be made by inputting pokemon into the Entry Boxes and clicking on the "Compare" button again. The Pokemon Collection can be shown again by clicking the "Show All Pokemon Button" if needed as a reference.
 
+## Video Walkthrough
+
+Follow the link below for a video walkthrough.
+
+https://youtu.be/bfnfxX1pem0
+
 ## FAQ
 
 - Q. When I input a pokemon's name or Pokedex Entry # into the Entry Box I get the following error. "Pokemon (1 or 2) was left blank or is not a valid Pokemon. Please check your spelling."
